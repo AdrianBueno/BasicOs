@@ -1,0 +1,13 @@
+./Simulator hp programWithOnlySize 0 programWithNegativeSize 0 > salidaV3_1
+
+./Simulator hp programWithOnlySize 0 programWithNegativeSize 0 programNoExist 5 > salidaV3_2
+
+./Simulator hp programWithOnlySize 0 programWithNegativeSize 0 programNoExist 5 testProgram1_V3 10  > salidaV3_3
+
+./Simulator hp programWithOnlySize 0 programWithNegativeSize 0 programNoExist 5 testProgram1_V3 10 testProgram2_V3 15  > salidaV3_4
+
+./Simulator hp programWithOnlySize 0 programWithNegativeSize 0 programNoExist 5 testProgram1_V3 10 testProgram2_V3 15 testProgram3_V3 20 > salidaV3_5
+
+./Simulator hp programWithOnlySize 0 programWithNegativeSize 0 programNoExist 5 testProgram1_V3 10 testProgram2_V3 15 testProgram3_V3 20 testProgram4_V3 45 > salidaV3_6
+
+./Simulator hp programWithOnlySize 0 programWithNegativeSize 0 programNoExist 5 testProgram1_V3 10 testProgram2_V3 15 testProgram3_V3 20 testProgram4_V3 45 testProgram5_V3 45 > salidaV3_7

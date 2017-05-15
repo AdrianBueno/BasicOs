@@ -1,0 +1,18 @@
+proceso [0] entra en estado [NEW]
+[0] Proceso [0] pasando del estado [NEW] al estado [READY]
+El programa no es valido
+El programa no es valido
+[0] Proceso [0], pasando del estado [READY] al estado [EXECUTING].
+[1] a 0 0 (PID: 0, PC: 1,Accumulator: 0 PSW: 0)
+[2] n 0 0 (PID: 0, PC: 2,Accumulator: 0 PSW: 0)
+[3] j -1 0 (PID: 0, PC: 1,Accumulator: 0 PSW: 4)
+	User:  0 
+	Daemon: 
+[4] n 0 0 (PID: 0, PC: 2,Accumulator: 0 PSW: 0)
+[5] j -1 0 (PID: 0, PC: 1,Accumulator: 0 PSW: 0)
+[6] n 0 0 (PID: 0, PC: 2,Accumulator: 0 PSW: 4)
+El fichero de programa no existe
+[6] Proceso [0], pasando del estado [EXECUTING] al estado [EXECUTING].
+	User:  0 
+	Daemon: 
+[7] h 0 0 (PID: 0, PC: 3,Accumulator: 0 PSW: 1)

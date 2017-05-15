@@ -1,0 +1,8 @@
+// Proceso Inactivo del Sistema
+// Ejecuta la instrucción NOP indefinidamente
+     4  // Tamanio del programa en posiciones de memoria
+100 // Prioridad del proceso generado (MUY baja prioridad)
+ADD 0 0
+NOP
+JUMP -1  // Saltar una posicion de memoria hacia atrás
+HALT

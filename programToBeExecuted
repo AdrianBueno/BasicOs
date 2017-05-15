@@ -1,0 +1,9 @@
+55  // Solución ejercicio 6 de la V0
+0
+ADD 0 0
+MEMADD 1 33
+WRITE 33
+INC -7
+ZJUMP 2  // Si el registro acumulador==0, saltar dos posiciones de memoria hacia adelante
+JUMP -4  // Saltar 4 posiciones de memoria hacia atrás
+HALT

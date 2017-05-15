@@ -1,0 +1,138 @@
+[0] Proceso [0] pasando del estado [NEW] al estado [READY]
+ERROR: Program [programWithOnlySize] not valid
+ERROR: Program [programWithNegativeSize] not valid
+[0] Proceso [0] pasando del estado [READY] al estado [EXECUTING]
+[0] a 0 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 0)
+[1] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 0)
+[2] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 4)
+[3] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 0)
+[4] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 0)
+[5] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 4)
+ERROR: Program [programNoExist] do not exist
+[6] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 0)
+[7] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 0)
+[8] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 4)
+[9] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 0)
+[10] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 0)
+[11] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 4)
+[12] Proceso [1] pasando del estado [NEW] al estado [READY]
+[12] Proceso [0] pasando del estado [EXECUTING] al estado [READY]
+[12] Proceso [1] pasando del estado [READY] al estado [EXECUTING]
+[12] a 0 2 (PID: 1, PC: 1, Accumulator: 2, PSW: 0)
+[13] z 3 0 (PID: 1, PC: 2, Accumulator: 2, PSW: 0)
+[14] i -1 0 (PID: 1, PC: 3, Accumulator: 1, PSW: 4)
+[15] Proceso [2] pasando del estado [NEW] al estado [READY]
+[15] Proceso [1] pasando del estado [EXECUTING] al estado [READY]
+[15] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[15] a 0 2 (PID: 2, PC: 1, Accumulator: 2, PSW: 0)
+[16] t 7 0 (PID: 2, PC: 2, Accumulator: 2, PSW: 512)
+[17] Proceso [2] pasando del estado [EXECUTING] al estado [BLOCKED]
+[17] Proceso [1] pasando del estado [READY] al estado [EXECUTING]
+[17] j -2 0 (PID: 1, PC: 1, Accumulator: 1, PSW: 4)
+[18] z 3 0 (PID: 1, PC: 2, Accumulator: 1, PSW: 0)
+[19] i -1 0 (PID: 1, PC: 3, Accumulator: 0, PSW: 0)
+[20] j -2 0 (PID: 1, PC: 1, Accumulator: 0, PSW: 4)
+[21] Proceso [3] pasando del estado [NEW] al estado [READY]
+[21] z 3 0 (PID: 1, PC: 4, Accumulator: 0, PSW: 0)
+[22] t 3 0 (PID: 1, PC: 5, Accumulator: 0, PSW: 512)
+[23] Process [1] has requested to terminate
+[23] Proceso [1] pasando del estado [EXECUTING] al estado [EXIT]
+[23] Proceso [3] pasando del estado [READY] al estado [EXECUTING]
+[23] a 0 1 (PID: 3, PC: 1, Accumulator: 1, PSW: 4)
+[24] Proceso [2] pasando del estado [BLOCKED] al estado [READY]
+[24] Proceso [3] pasando del estado [EXECUTING] al estado [READY]
+[24] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[24] z 3 0 (PID: 2, PC: 3, Accumulator: 2, PSW: 0)
+[25] i -1 0 (PID: 2, PC: 4, Accumulator: 1, PSW: 0)
+[26] j -3 0 (PID: 2, PC: 1, Accumulator: 1, PSW: 4)
+[27] t 7 0 (PID: 2, PC: 2, Accumulator: 1, PSW: 512)
+[28] Proceso [2] pasando del estado [EXECUTING] al estado [BLOCKED]
+[28] Proceso [3] pasando del estado [READY] al estado [EXECUTING]
+[28] t 7 0 (PID: 3, PC: 2, Accumulator: 1, PSW: 512)
+[29] Proceso [3] pasando del estado [EXECUTING] al estado [BLOCKED]
+[29] Proceso [0] pasando del estado [READY] al estado [EXECUTING]
+[29] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 4)
+[30] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 0)
+[31] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 0)
+[32] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 4)
+[33] Proceso [2] pasando del estado [BLOCKED] al estado [READY]
+[33] Proceso [3] pasando del estado [BLOCKED] al estado [READY]
+[33] Proceso [0] pasando del estado [EXECUTING] al estado [READY]
+[33] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[33] z 3 0 (PID: 2, PC: 3, Accumulator: 1, PSW: 0)
+[34] i -1 0 (PID: 2, PC: 4, Accumulator: 0, PSW: 0)
+[35] j -3 0 (PID: 2, PC: 1, Accumulator: 0, PSW: 4)
+[36] t 7 0 (PID: 2, PC: 2, Accumulator: 0, PSW: 512)
+[37] Proceso [2] pasando del estado [EXECUTING] al estado [BLOCKED]
+[37] Proceso [3] pasando del estado [READY] al estado [EXECUTING]
+[37] z 3 0 (PID: 3, PC: 3, Accumulator: 1, PSW: 0)
+[38] i -1 0 (PID: 3, PC: 4, Accumulator: 0, PSW: 4)
+[39] Proceso [2] pasando del estado [BLOCKED] al estado [READY]
+[39] Proceso [3] pasando del estado [EXECUTING] al estado [READY]
+[39] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[39] z 3 0 (PID: 2, PC: 5, Accumulator: 0, PSW: 0)
+[40] t 3 0 (PID: 2, PC: 6, Accumulator: 0, PSW: 512)
+[41] Process [2] has requested to terminate
+[41] Proceso [2] pasando del estado [EXECUTING] al estado [EXIT]
+[41] Proceso [3] pasando del estado [READY] al estado [EXECUTING]
+[41] j -3 0 (PID: 3, PC: 1, Accumulator: 0, PSW: 4)
+[42] t 7 0 (PID: 3, PC: 2, Accumulator: 0, PSW: 512)
+[43] Proceso [3] pasando del estado [EXECUTING] al estado [BLOCKED]
+[43] Proceso [0] pasando del estado [READY] al estado [EXECUTING]
+[43] j -1 0 (PID: 0, PC: 1, Accumulator: 0, PSW: 0)
+[44] n 0 0 (PID: 0, PC: 2, Accumulator: 0, PSW: 4)
+[45] Proceso [1] pasando del estado [NEW] al estado [READY]
+[45] Proceso [2] pasando del estado [NEW] al estado [READY]
+[45] Proceso [3] pasando del estado [BLOCKED] al estado [READY]
+[45] Proceso [0] pasando del estado [EXECUTING] al estado [READY]
+[45] Proceso [1] pasando del estado [READY] al estado [EXECUTING]
+[45] s 0 3 (PID: 1, PC: 1, Accumulator: -3, PSW: 0)
+[46] i 1 0 (PID: 1, PC: 2, Accumulator: -2, PSW: 0)
+[47] t 4 0 (PID: 1, PC: 3, Accumulator: -2, PSW: 516)
+[48] Proceso [1] pasando del estado [EXECUTING] al estado [READY]
+[48] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[48] a 3 0 (PID: 2, PC: 1, Accumulator: 3, PSW: 0)
+[49] i -1 0 (PID: 2, PC: 2, Accumulator: 2, PSW: 0)
+[50] t 4 0 (PID: 2, PC: 3, Accumulator: 2, PSW: 516)
+[51] Proceso [2] pasando del estado [EXECUTING] al estado [READY]
+[51] Proceso [1] pasando del estado [READY] al estado [EXECUTING]
+[51] z 2 0 (PID: 1, PC: 4, Accumulator: -2, PSW: 0)
+[52] j -3 0 (PID: 1, PC: 1, Accumulator: -2, PSW: 0)
+[53] i 1 0 (PID: 1, PC: 2, Accumulator: -1, PSW: 4)
+[54] t 4 0 (PID: 1, PC: 3, Accumulator: -1, PSW: 512)
+[55] Proceso [1] pasando del estado [EXECUTING] al estado [READY]
+[55] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[55] z 2 0 (PID: 2, PC: 4, Accumulator: 2, PSW: 0)
+[56] j -3 0 (PID: 2, PC: 1, Accumulator: 2, PSW: 4)
+[57] i -1 0 (PID: 2, PC: 2, Accumulator: 1, PSW: 0)
+[58] t 4 0 (PID: 2, PC: 3, Accumulator: 1, PSW: 512)
+[59] Proceso [2] pasando del estado [EXECUTING] al estado [READY]
+[59] Proceso [1] pasando del estado [READY] al estado [EXECUTING]
+[59] z 2 0 (PID: 1, PC: 4, Accumulator: -1, PSW: 4)
+[60] j -3 0 (PID: 1, PC: 1, Accumulator: -1, PSW: 0)
+[61] i 1 0 (PID: 1, PC: 2, Accumulator: 0, PSW: 0)
+[62] t 4 0 (PID: 1, PC: 3, Accumulator: 0, PSW: 516)
+[63] Proceso [1] pasando del estado [EXECUTING] al estado [READY]
+[63] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[63] z 2 0 (PID: 2, PC: 4, Accumulator: 1, PSW: 0)
+[64] j -3 0 (PID: 2, PC: 1, Accumulator: 1, PSW: 0)
+[65] i -1 0 (PID: 2, PC: 2, Accumulator: 0, PSW: 4)
+[66] t 4 0 (PID: 2, PC: 3, Accumulator: 0, PSW: 512)
+[67] Proceso [2] pasando del estado [EXECUTING] al estado [READY]
+[67] Proceso [1] pasando del estado [READY] al estado [EXECUTING]
+[67] z 2 0 (PID: 1, PC: 5, Accumulator: 0, PSW: 0)
+[68] t 3 0 (PID: 1, PC: 6, Accumulator: 0, PSW: 516)
+[69] Process [1] has requested to terminate
+[69] Proceso [1] pasando del estado [EXECUTING] al estado [EXIT]
+[69] Proceso [2] pasando del estado [READY] al estado [EXECUTING]
+[69] z 2 0 (PID: 2, PC: 5, Accumulator: 0, PSW: 0)
+[70] t 3 0 (PID: 2, PC: 6, Accumulator: 0, PSW: 512)
+[71] Process [2] has requested to terminate
+[71] Proceso [2] pasando del estado [EXECUTING] al estado [EXIT]
+[71] Proceso [3] pasando del estado [READY] al estado [EXECUTING]
+[71] z 3 0 (PID: 3, PC: 5, Accumulator: 0, PSW: 4)
+[72] t 3 0 (PID: 3, PC: 6, Accumulator: 0, PSW: 512)
+[73] Process [3] has requested to terminate
+[73] Proceso [3] pasando del estado [EXECUTING] al estado [EXIT]
+[73] Proceso [0] pasando del estado [READY] al estado [EXECUTING]
+[73] h 0 0 (PID: 0, PC: 3, Accumulator: 0, PSW: 1)

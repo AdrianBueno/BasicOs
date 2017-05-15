@@ -1,0 +1,50 @@
+// Move a process to the READY state: it will be inserted, depending on its priority, in
+// a queue of identifiers of READY processes
+void OperatingSystem_MoveToTheREADYState(int PID) {
+	int queue=processTable[PID].queueID;
+	
+	if (Heap_add(PID, readyToRunQueue[queue],QUEUE_PRIORITY ,numberOfReadyToRunProcesses[queue] ,PROCESSTABLEMAXSIZE)>=0) {
+	  numberOfReadyToRunProcesses[queue]++;
+
+	  ComputerSystem_DebugMessage(SYSPROC,"sdssGdsGss","[",Clock_GetTime(),"] ","Proceso [",PID,"] pasando del estado [",statesNames[processTable[PID].state],"] al estado [");
+	  // Change the process' state
+	  processTable[PID].state=READY;
+	  ComputerSystem_DebugMessage(SYSPROC,"Gss",statesNames[processTable[PID].state],"]\n");
+	} 
+	else 
+	  ComputerSystem_DebugMessage(SYSPROC,"sdssGdsGss","[",Clock_GetTime(),"] ","Proceso [",PID,"] en estado [",statesNames[processTable[PID].state],"] NO puede pasar a cola de LISTOS\n");
+
+	  OperatingSystem_PrintReadyToRunQueue();
+}
+
+// Return PID of more priority process in the READY queue (parameter)
+int OperatingSystem_ExtractFromReadyToRun(int queueID) {
+  
+	int selectedProcess=NOPROCESS;
+
+	selectedProcess=Heap_poll(readyToRunQueue[queueID],QUEUE_PRIORITY ,numberOfReadyToRunProcesses[queueID]);
+	if (selectedProcess>=0) 
+	  numberOfReadyToRunProcesses[queueID]--;
+	
+	// Return more priority process or NOPROCESS if empty queue
+	return selectedProcess; 
+}
+
+
+// En OperatingSystem.c
+void OperatingSystem_PrintStatus(){
+  int i;
+  OperatingSystem_PrintReadyToRunQueue();
+  ComputerSystem_DebugMessage(SHORTTERMSCHEDULE,"s","\tCola de SLEEPING: ");
+  for (i=0; i< numberOfSleepingProcesses; i++) {
+	ComputerSystem_DebugMessage(SHORTTERMSCHEDULE,"sGdsdsRds","[",sleepingProcessesQueue[i],", ",processTable[sleepingProcessesQueue[i]].priority,", ",processTable[sleepingProcessesQueue[i]].whenToWakeUp,"]");
+	if (i<numberOfSleepingProcesses-1)
+	  ComputerSystem_DebugMessage(SHORTTERMSCHEDULE,"s",", ");
+  }
+  ComputerSystem_DebugMessage(SHORTTERMSCHEDULE,"s","\n");
+  
+  ComputerSystem_DebugMessage(SHORTTERMSCHEDULE,"sGdsdsRdsss","\tRunning Process: [PID:",executingProcessID
+						  ,", Priority: ",processTable[executingProcessID].priority
+						  ,", WakeUp: ",processTable[executingProcessID].whenToWakeUp
+						  ,", Queue: ",processTable[executingProcessID].queueID?"DAEMONS":"USER","]\n");
+}	  

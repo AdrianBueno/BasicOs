@@ -1,0 +1,5 @@
+60
+3
+ADD 60 0
+WRITE 59 
+TRAP 3

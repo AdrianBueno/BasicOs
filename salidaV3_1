@@ -1,0 +1,6 @@
+proceso [0] entra en estado [NEW]
+[0] Proceso [0] pasando del estado [NEW] al estado [READY]
+El programa no es valido
+El programa no es valido
+[0] Proceso [0], pasando del estado [READY] al estado [EXECUTING].
+[1] h 0 0 (PID: 0, PC: 3,Accumulator: 0 PSW: 1)

@@ -1,0 +1,97 @@
+
+// In ComputerSystem.c
+//  Ejercicio 0 de V3
+// Fill in the array named userProgramsList with the information given
+// by the user in the command line
+// Insert new program in heap "arrivalTimeQueue" by arrivalTime
+// IT IS NOT NECESSARY TO COMPLETELY UNDERSTAND THIS FUNCTION
+int ComputerSystem_ObtainProgramList(int argc, char *argv[]) {
+	
+	int i;
+	int count=0;
+	USER_PROGRAMS_DATA *upd;
+
+	// To remember the simulator sections to be message-debugged
+	debugLevel = argv[1];
+	for (i=0; i< strlen(debugLevel);i++)
+	  if (isupper(debugLevel[i])){
+		COLOURED = 1;
+		debugLevel[i]=tolower(debugLevel[i]);
+	  }
+	
+	for (i=0; i<USERPROGRAMSMAXNUMBER;i++)
+	      userProgramsList[i]=NULL;
+
+	// Store the names of the programs
+	for (i = 2; i < argc && count<USERPROGRAMSMAXNUMBER;) { // comprobar que no haya más de USERPROGRAMSMAXNUMBER parámetros
+		upd=(USER_PROGRAMS_DATA *) malloc(sizeof(USER_PROGRAMS_DATA));
+		// Guarda el nombre del fichero
+		upd->executableName = (char *) malloc((strlen(argv[i])+1)*sizeof(char));
+		strcpy(upd->executableName,argv[i]);
+		i++;
+		// Try to store the arrival time
+		if (i < argc) {
+			if (sscanf(argv[i], "%d", &(upd->arrivalTime)) == 1)
+				// An arrival time has been read. Increment i
+				i++;
+			else
+				// An arrival time has not been read. Assume it is 0 and do not increment i 
+				upd->arrivalTime = 0;
+		}
+		// Store the structure in the list
+		userProgramsList[count]=upd;
+		
+	// Ejercicio 0 de V3
+	if (Heap_add(count,arrivalTimeQueue,QUEUE_ARRIVAL,count,USERPROGRAMSMAXNUMBER)==0)
+		  count++; // There is one program more
+// 		count++; // There is one program more
+	}
+	numberOfProgramsInArrivalTimeQueue=count; // Ejercicio 0 de V3
+	return count;
+}
+
+// In ComputerSystem.c 
+// Ejercicio 0 de V3
+// Print arrivalTiemQueue program information
+void OperatingSystem_PrintArrivalTimeQueue(){
+  int i;
+  
+  if (numberOfProgramsInArrivalTimeQueue>0) {
+	ComputerSystem_DebugMessage(LONGTERMSCHEDULE,"s","\tCola de LLEGADA de programas: ");
+	for (i=0; i< numberOfProgramsInArrivalTimeQueue; i++) {
+	  ComputerSystem_DebugMessage(LONGTERMSCHEDULE,"sGssRds","[",userProgramsList[arrivalTimeQueue[i]]->executableName,", ",userProgramsList[arrivalTimeQueue[i]]->arrivalTime,"]");
+	  if (i<numberOfProgramsInArrivalTimeQueue-1)
+		ComputerSystem_DebugMessage(LONGTERMSCHEDULE,"s",", ");
+	}
+	ComputerSystem_DebugMessage(LONGTERMSCHEDULE,"s","\n");
+  }
+}
+  
+
+
+// Ejercicio 2 de V3
+// This function returns:
+// 		-1 if no programs in arrivalTimeQueue
+//		1 if any program arrivalTime is now
+//		0 else
+// considered by the LTS to create processes at the current time
+int OperatingSystem_GetNewProgram() {
+
+        int currentTime;
+		int programArrivalTime;
+
+		if (numberOfProgramsInArrivalTimeQueue <= 0)
+		  return -1;  // No new programs in command line list of programs
+		
+		// Get the current simulation time
+        currentTime = Clock_GetTime();
+		
+		// Get arrivalTime of next program
+		programArrivalTime = userProgramsList[arrivalTimeQueue[0]]->arrivalTime; 
+
+		if (programArrivalTime > (currentTime-INTERVALBETWEENINTERRUPTS)
+			&&  programArrivalTime <= currentTime)
+		  return 1;  //  There'is new program to start
+		 
+		return 0;  //  No program in current time
+}
